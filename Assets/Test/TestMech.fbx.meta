@@ -1,0 +1,158 @@
+fileFormatVersion: 2
+guid: 26b5ddc17b18a8045bffb40b7de56cd5
+timeCreated: 1450651207
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Armature
+    100002: ArmIK.L
+    100004: ArmIK.L_end
+    100006: ArmIK.R
+    100008: ArmIK.R_end
+    100010: Bone
+    100012: Elbow.L
+    100014: Elbow.L_end
+    100016: Elbow.R
+    100018: Elbow.R_end
+    100020: Foot.L
+    100022: Foot.L_end
+    100024: Foot.R
+    100026: Foot.R_end
+    100028: Forearm.L
+    100030: Forearm.R
+    100032: Hand.L
+    100034: Hand.L_end
+    100036: Hand.R
+    100038: Hand.R_end
+    100040: Head
+    100042: Head_end
+    100044: Hips
+    100046: Knee.L
+    100048: Knee.L_end
+    100050: Knee.R
+    100052: Knee.R_end
+    100054: LegIK.L
+    100056: LegIK.R
+    100058: LowerLeg.L
+    100060: LowerLeg.L_end
+    100062: LowerLeg.R
+    100064: LowerLeg.R_end
+    100066: Mesh
+    100068: Shoulder.L
+    100070: Shoulder.R
+    100072: //RootNode
+    100074: Torso
+    100076: UpperArm.L
+    100078: UpperArm.R
+    100080: UpperLeg.L
+    100082: UpperLeg.R
+    400000: Armature
+    400002: ArmIK.L
+    400004: ArmIK.L_end
+    400006: ArmIK.R
+    400008: ArmIK.R_end
+    400010: Bone
+    400012: Elbow.L
+    400014: Elbow.L_end
+    400016: Elbow.R
+    400018: Elbow.R_end
+    400020: Foot.L
+    400022: Foot.L_end
+    400024: Foot.R
+    400026: Foot.R_end
+    400028: Forearm.L
+    400030: Forearm.R
+    400032: Hand.L
+    400034: Hand.L_end
+    400036: Hand.R
+    400038: Hand.R_end
+    400040: Head
+    400042: Head_end
+    400044: Hips
+    400046: Knee.L
+    400048: Knee.L_end
+    400050: Knee.R
+    400052: Knee.R_end
+    400054: LegIK.L
+    400056: LegIK.R
+    400058: LowerLeg.L
+    400060: LowerLeg.L_end
+    400062: LowerLeg.R
+    400064: LowerLeg.R_end
+    400066: Mesh
+    400068: Shoulder.L
+    400070: Shoulder.R
+    400072: //RootNode
+    400074: Torso
+    400076: UpperArm.L
+    400078: UpperArm.R
+    400080: UpperLeg.L
+    400082: UpperLeg.R
+    4300000: Mesh
+    9500000: //RootNode
+    13700000: Mesh
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

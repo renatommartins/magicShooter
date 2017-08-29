@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8178d17300244384a873a6fdf3c6d1f5, type: 3}
+  m_Name: PartsDatabase
+  m_EditorClassIdentifier: 
+  headParts:
+  - {fileID: 11400000, guid: 1c73dd6070418304d9003fcc0236fce1, type: 2}
+  torsoParts:
+  - {fileID: 11400000, guid: a7ad919e49a843f419942df1b53d6c7b, type: 2}
+  leftArmParts:
+  - {fileID: 11400000, guid: 19743fe04150ef04c8cc91db086a4674, type: 2}
+  rightArmParts:
+  - {fileID: 11400000, guid: febf7f6e9c4fffa47b17577c591c8182, type: 2}
+  legsParts:
+  - {fileID: 11400000, guid: 390504158668beb42bb1310d9c4d53d8, type: 2}
+  equipments:
+  - {fileID: 11400000, guid: dbd3978d9fc1a8d47b173e22f7c56514, type: 2}
+  - {fileID: 11400000, guid: 756b376b69fedf748ab4fe5538944651, type: 2}
+  - {fileID: 11400000, guid: 044a8c535a7ed864ba32949be9d8e49e, type: 2}
+  - {fileID: 11400000, guid: bc32194bd1870ab48afeeb2fb9cfa626, type: 2}

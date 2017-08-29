@@ -1,0 +1,135 @@
+	public Suspension suspension = new Suspension(1,0.8f,0.2f,3,0.4f);
+	float lastVerticalPosition;
+
+	public float lateralStaticFrictionCffcnt = 0;
+	public float lateralDynamicFrictionCffcnt = 0;
+
+	public float forwardStaticFrictionCffcnt = 0;
+	public float forwardDynamicFrictionCffcnt = 0;
+
+	public Vector3 direction = new Vector3();
+	public Vector3 rightDirection = new Vector3();
+
+	public Vector3 collisionNormal = new Vector3();
+	public Vector3 movementDirectionVector = new Vector3();
+	public Vector3 frictionCffcntVector = new Vector3();
+
+	public float lateralStaticFrictionForce = 0;
+	public float lateralDynamicFrictionForce = 0;
+
+	public float forwardStaticFrictionForce = 0;
+	public float forwardDynamicFrictionForce = 0;
+
+	public Vector3 frictionResultant = new Vector3();
+	
+	lateralStaticFrictionForce = lateralStaticFrictionCffcnt*controlRigidbody.mass*Physics.gravity.y;
+		lateralDynamicFrictionForce = lateralDynamicFrictionCffcnt*controlRigidbody.mass*Physics.gravity.y;
+
+		forwardStaticFrictionForce = forwardStaticFrictionCffcnt*controlRigidbody.mass*Physics.gravity.y;
+		forwardDynamicFrictionForce = forwardDynamicFrictionCffcnt*controlRigidbody.mass*Physics.gravity.y;
+	
+	public void FrictionUpdate(Vector3 collisionNormal){
+		this.collisionNormal = collisionNormal;
+
+		movementDirectionVector = Vector3.Scale(collisionNormal, new Vector3(1,0,1));
+
+		float angle = transform.eulerAngles.y*Mathf.Deg2Rad;
+
+		direction = new Vector3(-Mathf.Sin(-angle),0,Mathf.Cos(-angle));
+		rightDirection = new Vector3(-Mathf.Sin(-angle-Mathf.PI/2),0,Mathf.Cos(-angle-Mathf.PI/2));
+
+		frictionCffcntVector = new Vector3(lateralStaticFrictionCffcnt*Mathf.Cos(-angle),0,lateralStaticFrictionCffcnt*Mathf.Sin(-angle));
+
+		Vector3 lateralFrictionResultant = new Vector3();
+		Vector3 lateralVelocity = Vector3.Project(controlRigidbody.velocity,rightDirection);
+		Vector3 lateralForce = Vector3.Project(movementDirectionVector,rightDirection)*controlRigidbody.mass*Physics.gravity.y;
+		if(lateralForce.sqrMagnitude <= lateralStaticFrictionForce*lateralStaticFrictionForce && lateralVelocity.sqrMagnitude <= 0.25f ){	lateralFrictionResultant = lateralForce;	}
+		else{	lateralFrictionResultant = lateralVelocity.normalized*lateralDynamicFrictionForce;	}
+
+		Vector3 forwardFrictionResultant = new Vector3();
+		Vector3 forwardVelocity = Vector3.Project(controlRigidbody.velocity,direction);
+		Vector3 forwardForce = Vector3.Project(movementDirectionVector,direction)*controlRigidbody.mass*Physics.gravity.y;
+		if(forwardForce.sqrMagnitude <= forwardStaticFrictionForce*forwardStaticFrictionForce && forwardVelocity.sqrMagnitude <= 0.25f ){	forwardFrictionResultant = forwardForce;	}
+		else{	forwardFrictionResultant = forwardVelocity.normalized*forwardDynamicFrictionForce;	}
+
+		frictionResultant = lateralFrictionResultant + (triedToMove? Vector3.zero : forwardFrictionResultant);
+	}
+	
+	Vector3 normalSum = new Vector3();
+			foreach( ContactPoint contact in collision.contacts){
+				normalSum += contact.normal;
+			}
+			collisionNormal = normalSum.normalized;
+	
+	Vector3 lineEnd = transform.position;
+		lineEnd.y += suspension.torsoPosition*0.2f;
+		Debug.DrawLine(transform.position+transform.right*(-0.1f),lineEnd+transform.right*(-0.1f),Color.red,0,false);
+		Vector3 forceOnSystem = transform.position;
+		forceOnSystem.y += suspension.externalVerticalForce*0.01f;
+		Debug.DrawLine(transform.position+transform.right*0.1f,forceOnSystem+transform.right*0.1f,Color.blue,0,false);
+
+		Debug.DrawLine(transform.position,transform.position+(direction*2),Color.black,0,false);
+		Debug.DrawLine(transform.position,transform.position+(frictionCffcntVector*2),Color.black,0,false);
+
+		Debug.DrawLine(transform.position,transform.position+(collisionNormal),Color.green,0,false);
+
+		Debug.DrawLine(transform.position,transform.position+(movementDirectionVector),Color.grey,0,false);
+
+		Debug.DrawLine(transform.position,transform.position+(frictionResultant),Color.white,0,false);
+	
+	public class DashPhysics{
+		
+	}
+
+	[System.Serializable]
+	public class Suspension{
+		public float totalMass;
+		public Mass torsoMass;
+		public Mass feetMass;
+		public float springConstant;
+		public float dampenerCffcnt;
+		public float torsoPosition = 0;
+		public float lastVelocity = 0;
+
+		public float maxTorsoDistance = 0;
+		public float minTorsoDistance = -2;
+
+		public float externalVerticalForce = 0;
+
+		public void Update(bool isGrounded, float systemVerticalVelocity){
+			feetMass.velocity = systemVerticalVelocity;
+			//torsoPosition += isGrounded && torsoPosition < maxTorsoDistance && torsoPosition > minTorsoDistance && systemDeltaPosition > 0? -systemDeltaPosition : 0;
+
+			float springForce =  springConstant*torsoPosition + dampenerCffcnt*(torsoMass.velocity-feetMass.velocity);//torsoPosition > minTorsoDistance && torsoPosition < maxTorsoDistance? 
+			float torsoResultant = torsoMass.weight*Physics.gravity.y -  springForce;// - dampenerCffcnt*torsoMass.velocity;
+			float feetResultant = isGrounded? 0 : springForce;
+
+			externalVerticalForce = feetResultant < 0? feetResultant * (totalMass/feetMass.weight) : 0;
+
+			torsoMass.momentum += torsoResultant*Time.fixedDeltaTime;
+			torsoMass.velocity = torsoMass.momentum/torsoMass.weight;
+			float torsoNewPosition = Mathf.Clamp(torsoPosition+(torsoMass.velocity-feetMass.velocity)*Time.fixedDeltaTime,minTorsoDistance,maxTorsoDistance);
+			torsoPosition = torsoNewPosition;
+		}
+
+		public Suspension(float totalMass, float torsoMassRatio, float feetMassRatio, float springConstant, float dampenerCoefficient){
+			this.totalMass = totalMass;
+			torsoMass = new Mass(torsoMassRatio*totalMass);
+			feetMass = new Mass(feetMassRatio*totalMass);
+			this.springConstant = springConstant;
+			dampenerCffcnt = dampenerCoefficient;
+		}
+
+		[System.Serializable]
+		public class Mass{
+			public float weight;
+			public float velocity;
+			public float momentum;
+
+			public Mass(float weightRatio){
+				this.weight = weightRatio;
+				velocity = 0;
+				momentum = 0;
+			}
+		}
+	}

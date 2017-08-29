@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6495f9665d6cff84387238edffe58e8b, type: 3}
+  m_Name: PelletShotgun
+  m_EditorClassIdentifier: 
+  equipmentName: Pellet Shotgun
+  weight: 0
+  powerUse: 0
+  projectilePrefab: {fileID: 155030, guid: cd8ce0ca81b2f6c418f7c314e090099d, type: 2}
+  roundsPerMinute: 10
+  projectileDamage: 3
+  damageType: {fileID: 11400000, guid: deede9b28a47e4c419749f3156319b3d, type: 2}
+  projectileAmount: 24
+  projectileSpeed: 240
+  minimumSpread: 0.3
+  maximumSpread: 5
+  coneAngle: 6
+  spreadDistribution:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+    - time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  recoilSpread: 1.5
+  spreadRecovery: 0.03
+  meshGameObject: {fileID: 1000010757397220, guid: 9db58ffa47afefa4b953a278b7eff95b,
+    type: 2}
+  reloadTime: 6

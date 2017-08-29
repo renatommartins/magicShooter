@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 641af19f62da0094c9a3dc9c31c709cf, type: 3}
+  m_Name: KnightRightArm
+  m_EditorClassIdentifier: 
+  partName: Knight
+  armorLayers:
+  - armorType: {fileID: 11400000, guid: b9371b16df30049438c5eddaa34fad2e, type: 2}
+    hitPoints: 20
+  - armorType: {fileID: 11400000, guid: 1861fd552f4a03a43828cf3db279a468, type: 2}
+    hitPoints: 12
+  structureArmorType: {fileID: 11400000, guid: 25016cc9a58a04742972e5dfeae42a08, type: 2}
+  hitpoints: 60
+  structuralHitpoints: 300
+  weight: 0
+  powerUse: 0
+  testMaterial: {fileID: 2100000, guid: 6c5af64e9b9bef043963a4ce8dcf2a06, type: 2}
+  colliders: []
+  accuracy: 0
+  shoulderMount: 0
+  handMount: 0

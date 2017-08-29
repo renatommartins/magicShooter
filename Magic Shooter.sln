@@ -1,0 +1,35 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{52912598-7FA0-02FA-DEB5-8E159BC47987}") = "Magic Shooter", "Assembly-CSharp-firstpass.csproj", "{4DDE1004-EDA9-89C7-0F02-33A16AF6B7F2}"
+EndProject
+Project("{52912598-7FA0-02FA-DEB5-8E159BC47987}") = "Magic Shooter", "Assembly-CSharp.csproj", "{2CF6838C-CCD4-7875-5E6E-8F321DC91B10}"
+EndProject
+Project("{52912598-7FA0-02FA-DEB5-8E159BC47987}") = "Magic Shooter", "Assembly-CSharp-Editor.csproj", "{6CBADDD2-D0F8-5533-F9A9-0A804D2B8B22}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4DDE1004-EDA9-89C7-0F02-33A16AF6B7F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DDE1004-EDA9-89C7-0F02-33A16AF6B7F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DDE1004-EDA9-89C7-0F02-33A16AF6B7F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DDE1004-EDA9-89C7-0F02-33A16AF6B7F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CF6838C-CCD4-7875-5E6E-8F321DC91B10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CF6838C-CCD4-7875-5E6E-8F321DC91B10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CF6838C-CCD4-7875-5E6E-8F321DC91B10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CF6838C-CCD4-7875-5E6E-8F321DC91B10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CBADDD2-D0F8-5533-F9A9-0A804D2B8B22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CBADDD2-D0F8-5533-F9A9-0A804D2B8B22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CBADDD2-D0F8-5533-F9A9-0A804D2B8B22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CBADDD2-D0F8-5533-F9A9-0A804D2B8B22}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal

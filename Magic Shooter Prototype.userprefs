@@ -1,0 +1,19 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Characters\Base\Character.cs">
+    <Files>
+      <File FileName="Assets\Scripts\Characters\Base\Character.cs" Line="137" Column="1" />
+      <File FileName="Assets\Scripts\Base\Interfaces.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\LocalControl.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Base\Utils.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Base\Projectile.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\TestGun2.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Characters\Base\BaseBotPart.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Base\ParticleEffect.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

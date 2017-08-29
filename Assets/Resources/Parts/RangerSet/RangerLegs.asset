@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cb62cd4bf6ba664dbb123e68694ff7d, type: 3}
+  m_Name: RangerLegs
+  m_EditorClassIdentifier: 
+  partName: Ranger
+  armorLayers:
+  - armorType: {fileID: 11400000, guid: b9371b16df30049438c5eddaa34fad2e, type: 2}
+    hitPoints: 10
+  - armorType: {fileID: 11400000, guid: 1861fd552f4a03a43828cf3db279a468, type: 2}
+    hitPoints: 2
+  structureArmorType: {fileID: 11400000, guid: 25016cc9a58a04742972e5dfeae42a08, type: 2}
+  hitpoints: 60
+  structuralHitpoints: 300
+  weight: 0
+  powerUse: 0
+  testMaterial: {fileID: 2100000, guid: 3f0f8332628f5a049918a1dc7f63dbd7, type: 2}
+  colliders: []
+  weightLimit: 0
+  walkForceCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 0.9
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: -24.491583
+      outSlope: -24.491583
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  walkForceMax: 25
+  walkMaxSpeed: 10
+  dashForceCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0.6
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 0.8
+      value: 1
+      inSlope: -0.014250079
+      outSlope: -0.014250079
+      tangentMode: 0
+    - time: 1
+      value: 0.45
+      inSlope: -3.1657279
+      outSlope: -3.1657279
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  dashForceMax: 80
+  dashMaxSpeed: 55.56
